@@ -1,4 +1,5 @@
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
+import GitHubIcon from '@material-ui/icons/GitHub'
 import { about } from '../../portfolio'
 import './About.css'
 
@@ -22,8 +23,21 @@ const About = () => {
             href={social.linkedin}
             aria-label='linkedin'
             className='link link--icon'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             <LinkedInIcon />
+          </a>
+        )}
+        {social && social.github && (
+          <a
+            href={social.github}
+            aria-label='github'
+            className='link link--icon'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <GitHubIcon />
           </a>
         )}
       </div>
