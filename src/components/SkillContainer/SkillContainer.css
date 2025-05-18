@@ -1,4 +1,4 @@
-.project {
+.skill {
   padding: 2em;
   margin: 0 auto;
   text-align: center;
@@ -10,27 +10,27 @@
   position: relative;
 }
 
-.project:hover {
+.skill:hover {
   transform: translateY(-7px);
 }
 
-.project h3 {
+.skill h3 {
   color: var(--clr-primary);
   margin-bottom: 1em;
 }
 
-.project__description {
+.skill__description {
   margin: 1em 0;
 }
 
-.project__stack {
+.skill__details {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 1.2em 0;
 }
 
-.project__stack-item {
+.skill__details-item {
   background: var(--clr-bg);
   padding: 0.5em 1em;
   margin: 0.5em;
@@ -39,88 +39,103 @@
   display: inline-block;
 }
 
-.project .link--icon {
-  margin: 0 0.5em;
-}
-
-.project__preview {
+.skill__preview {
   margin-top: 1em;
 }
 
-.project__preview-text {
+.skill__preview-text {
   color: var(--clr-primary);
   font-weight: 500;
 }
 
 /* Styles pour le modal */
-.project-modal {
+.skill-modal {
   color: var(--clr-fg);
   max-width: 800px;
   margin: 0 auto;
   padding: 2em;
 }
 
-.project-modal h2 {
+.skill-modal h2 {
   color: var(--clr-primary);
   font-size: 2em;
   margin-bottom: 1em;
   text-align: center;
 }
 
-.project-modal h3 {
+.skill-modal h3 {
   color: var(--clr-fg-alt);
   margin: 1.5em 0 1em;
   font-size: 1.3em;
 }
 
-/* Styles pour l'article */
-.article-content {
-  text-align: left;
+.skill-modal__overview {
   line-height: 1.6;
+  margin-bottom: 2em;
+  text-align: center;
+  font-style: italic;
 }
 
-.article-section {
+.skill-modal__article {
+  margin: 2em 0;
+}
+
+.skill-modal__section {
   margin-bottom: 2em;
 }
 
-.article-section h3 {
+.skill-modal__section h3 {
   color: var(--clr-primary);
   font-size: 1.4em;
-  margin: 1.5em 0 1em;
+  margin: 1em 0;
 }
 
-.article-section p {
+.skill-modal__section p {
+  line-height: 1.8;
+  margin: 1em 0;
+  text-align: justify;
+}
+
+.skill-modal__stack {
+  margin: 2em 0;
+}
+
+.skill-modal__stack h3 {
+  text-align: center;
   margin-bottom: 1em;
 }
 
-.article-section ul {
+.skill-modal__stack .card__tags {
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.skill-modal__expertise {
+  margin-bottom: 2em;
+}
+
+.skill__details--modal {
+  justify-content: flex-start;
+  margin: 1em 0;
+}
+
+.skill-modal__projects ul {
   list-style: disc;
   margin-left: 1.5em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
-.article-section li {
+.skill-modal__projects li {
   margin: 0.5em 0;
+  line-height: 1.6;
 }
 
-.project-modal__tech {
-  margin: 2em 0;
-  text-align: center;
-}
-
-.project-modal__links {
+.skill-modal__links {
   display: flex;
   justify-content: center;
-  gap: 1em;
   margin-top: 2em;
 }
 
-.project-modal__links .btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-}
-
-.project-modal__links .btn svg {
-  font-size: 1.2em;
-}
+.skill .link--icon {
+  margin-top: 1em;
+} 

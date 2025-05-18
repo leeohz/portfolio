@@ -1,0 +1,226 @@
+.timeline-section {
+  padding: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline {
+  position: relative;
+  padding: 1rem 0;
+  min-height: 100%;
+}
+
+/* Ligne centrale continue */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(var(--clr-primary-rgb), 0.3);
+  z-index: 0;
+}
+
+.timeline-row {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 3rem;
+  min-height: 100px;
+}
+
+.timeline-row:last-child {
+  margin-bottom: 1rem;
+}
+
+.timeline-container {
+  position: relative;
+  width: 45%;
+  z-index: 1;
+}
+
+.timeline-container h3 {
+  text-align: center;
+  color: var(--clr-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: var(--clr-bg-alt);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ligne horizontale et point pour l'expérience */
+.timeline-container.experience .timeline-item::before {
+  content: '';
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 2px;
+  background-color: var(--clr-primary);
+  left: auto;
+  z-index: 0;
+}
+
+.timeline-container.experience .timeline-item::after {
+  content: '';
+  position: absolute;
+  right: -31px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--clr-primary);
+  left: auto;
+  z-index: 2;
+}
+
+/* Formation à droite */
+.timeline-container.education {
+  margin-left: auto;
+}
+
+.timeline-container.education .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 2px;
+  background-color: var(--clr-primary);
+  z-index: 0;
+}
+
+.timeline-container.education .timeline-item::after {
+  content: '';
+  position: absolute;
+  left: -31px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--clr-primary);
+  z-index: 2;
+}
+
+/* CNRS en dessous */
+.timeline-container.early-experience {
+  margin-right: auto;
+}
+
+.timeline-container.early-experience .timeline-item::before {
+  content: '';
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 2px;
+  background-color: var(--clr-primary);
+  z-index: 0;
+}
+
+.timeline-container.early-experience .timeline-item::after {
+  content: '';
+  position: absolute;
+  right: -31px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--clr-primary);
+  z-index: 2;
+}
+
+.timeline-content {
+  padding: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content h4 {
+  color: var(--clr-primary);
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.timeline-content .company,
+.timeline-content .institution {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.timeline-content .position,
+.timeline-content .title {
+  color: var(--clr-fg-alt);
+  margin-bottom: 0.2rem;
+  font-size: 0.85rem;
+}
+
+.timeline-content .description,
+.timeline-content .subtitle {
+  font-size: 0.8rem;
+  color: var(--clr-fg);
+  line-height: 1.3;
+}
+
+/* Container vide pour maintenir l'alignement */
+.timeline-container.empty {
+  visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-row {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-container {
+    width: 100%;
+  }
+
+  .timeline-container h3 {
+    text-align: left;
+    margin-left: 50px;
+    font-size: 1.1rem;
+  }
+
+  .timeline-item {
+    width: calc(100% - 60px);
+    margin-left: 50px !important;
+  }
+
+  .timeline-item::before {
+    left: -30px !important;
+    right: auto !important;
+    width: 30px;
+  }
+
+  .timeline-item::after {
+    left: -35px !important;
+    right: auto !important;
+  }
+
+  .timeline-container.empty {
+    display: none;
+  }
+} 

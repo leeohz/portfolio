@@ -1,17 +1,21 @@
-import { useContext, useState } from 'react'
-import Brightness2Icon from '@material-ui/icons/Brightness2'
-import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded'
+import { useState } from 'react'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
-import { ThemeContext } from '../../contexts/theme'
 import { projects, skills, contact } from '../../portfolio'
 import './Navbar.css'
 
 const Navbar = () => {
-  const [{ themeName, toggleTheme }] = useContext(ThemeContext)
   const [showNavList, setShowNavList] = useState(false)
 
-  const toggleNavList = () => setShowNavList(!showNavList)
+  const handleNavClick = (e) => {
+    e.preventDefault()
+    const targetId = e.target.getAttribute('href').slice(1)
+    const element = document.getElementById(targetId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+      setShowNavList(false)
+    }
+  }
 
   return (
     <nav className='center nav'>
@@ -19,26 +23,48 @@ const Navbar = () => {
         style={{ display: showNavList ? 'flex' : null }}
         className='nav__list'
       >
+        <li className='nav__list-item'>
+          <a
+            href='#timeline'
+            onClick={handleNavClick}
+            className='link link--nav'
+          >
+            Parcours
+          </a>
+        </li>
+
         {projects.length ? (
           <li className='nav__list-item'>
             <a
               href='#projects'
-              onClick={toggleNavList}
+              onClick={handleNavClick}
               className='link link--nav'
             >
-              Projects
+              Réalisations
             </a>
           </li>
         ) : null}
 
-        {skills.length ? (
+        {skills.technical.length ? (
           <li className='nav__list-item'>
             <a
-              href='#skills'
-              onClick={toggleNavList}
+              href='#technical-skills'
+              onClick={handleNavClick}
               className='link link--nav'
             >
-              Skills
+              Compétences Techniques
+            </a>
+          </li>
+        ) : null}
+
+        {skills.soft.length ? (
+          <li className='nav__list-item'>
+            <a
+              href='#soft-skills'
+              onClick={handleNavClick}
+              className='link link--nav'
+            >
+              Compétences Transverses
             </a>
           </li>
         ) : null}
@@ -47,7 +73,7 @@ const Navbar = () => {
           <li className='nav__list-item'>
             <a
               href='#contact'
-              onClick={toggleNavList}
+              onClick={handleNavClick}
               className='link link--nav'
             >
               Contact
@@ -58,16 +84,7 @@ const Navbar = () => {
 
       <button
         type='button'
-        onClick={toggleTheme}
-        className='btn btn--icon nav__theme'
-        aria-label='toggle theme'
-      >
-        {themeName === 'dark' ? <WbSunnyRoundedIcon /> : <Brightness2Icon />}
-      </button>
-
-      <button
-        type='button'
-        onClick={toggleNavList}
+        onClick={() => setShowNavList(!showNavList)}
         className='btn btn--icon nav__hamburger'
         aria-label='toggle navigation'
       >
