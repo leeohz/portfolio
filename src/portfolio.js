@@ -11,8 +11,7 @@ const about = {
   description:
     'Je suis étudiant en cursus expert en systèmes d\'information à l\'ESIEA. Depuis deux ans, j\'occupe le poste de support technique chez Cybelangel, une entreprise spécialisée en EASM et DRPS. Curieux et touche-à-tout par nature, j\'apprécie particulièrement mon travail actuel. Je suis également une personne sociable qui aime travailler en équipe et partager avec son entourage. Mes perspectives d\'avenir visent à acquérir des compétences aussi bien techniques que managériales pour évoluer vers un poste de manager ou de chef de projet. En dehors du travail, je maintiens mon intérêt pour l\'informatique en général, tout en cultivant ma curiosité à travers divers hobbies comme la peinture, la lecture, la musique et les jeux.',
   social: {
-    linkedin: 'https://www.linkedin.com/in/leopold-rolland/',
-    github: 'https://github.com/leeohz'
+    linkedin: 'https://www.linkedin.com/in/leopold-rolland/'
   },
 }
 
